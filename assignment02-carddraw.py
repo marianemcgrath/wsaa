@@ -16,3 +16,13 @@ import requests
 response = requests.get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
 data = response.json()
 deck_id = data['deck_id']
+
+# Step 2: Draw 5 cards, one by one, and print the value and the suit of each card.
+for i in range(5):
+    response = requests.get(f"https://deckofcardsapi.com/api/deck/{deck_id}/draw/?count=1")
+    card_data = response.json()
+    card = card_data['cards'][0]
+    value = card['value']
+    suit = card['suit']
+    print(f"Card {i+1}: {value} of {suit}")
+
