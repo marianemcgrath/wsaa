@@ -3,7 +3,7 @@
 
 # Deck of Cards API    https://deckofcardsapi.com/ -- This API simulates dealing a deck of cards
 
-# Write a program that "deals" (prints out) 5 cards:
+# This program "deals" (prints out) 5 cards:
 # Step 1: Shuffle the deck and get the deck_id
 # Step 2: Draw 5 cards, one by one, and print the value and the suit of each card.
 # BONUS POINTS: Get two hands and see which one is better
@@ -11,16 +11,13 @@
 #########################              ##################################
 
 # Import the requests library to make HTTP requests to the Deck of Cards API
-
 import requests
 
 # Step 1: Shuffle the deck and get the deck_id
-
 response = requests.get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
 deck_id = response.json()['deck_id']
 
 # Step 2: Draw two hands of 5 cards each and print the value and suit of each card
-
 response = requests.get(f"https://deckofcardsapi.com/api/deck/{deck_id}/draw/?count=10")
 cards = response.json()['cards']
 
@@ -39,6 +36,7 @@ hand2 = cards[5:]
 # - Two Pair: 0 points
 # - High Card: -1 point
 
+# Define functions to check for each hand type
 def calculate_score(hand):
     values = [card['value'] for card in hand]
     suits = [card['suit'] for card in hand]
@@ -79,7 +77,6 @@ score2 = calculate_score(hand2)
 print(f"Score: {score2}")
 
 # Determine which hand is better based on the scores (ranks)
-
 print(f"\nHand 1 score: {score1}")
 print(f"Hand 2 score: {score2}")
 
