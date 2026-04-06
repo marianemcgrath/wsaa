@@ -8,9 +8,8 @@
 # Step 2: Draw 5 cards, one by one, and print the value and the suit of each card.
 # BONUS POINTS: Get two hands and see which one is better
 
-#########################              ##################################
 
-# Import the requests library to make HTTP requests to the Deck of Cards API
+# Import library to make HTTP requests
 try:
     import requests
 except ImportError:
