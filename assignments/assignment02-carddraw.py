@@ -26,11 +26,12 @@ deck_id = response.json()['deck_id']
 response = requests.get(f"https://deckofcardsapi.com/api/deck/{deck_id}/draw/?count=10")
 cards = response.json()['cards']
 
+# Source: https://www.geeksforgeeks.org/python/response-json-python-requests/
+
+
 hand1 = cards[:5]
 hand2 = cards[5:]
 
-
-#------ Score Calculation ------#
 
 # The scoring system is:
 # - Straight Flush: 8 points
@@ -80,7 +81,7 @@ def is_straight(hand):
  
 def is_three_of_a_kind(hand):
     values = [card['value'] for card in hand]
-    return any(values.count(v) == 3 for v in values)
+    return any(values.count(v) == 3 for v in values) and not is_full_house(hand)
  
 def is_two_pair(hand):
     values = [card['value'] for card in hand]
@@ -93,10 +94,6 @@ def is_one_pair(hand):
     return pairs == 1
 
 def rank_values(hand):
-    """
-    Returns card values sorted by frequency (desc), then by card value (desc). For example, a pair of Kings + 10, 7, 3 -> [13, 13, 10, 7, 3]
-    This will be useful to break ties between hands of the same score.
-    """
     freq = {}
     for card in hand:
         n = card_value_to_number(card['value'])
@@ -104,6 +101,9 @@ def rank_values(hand):
     groups = sorted(freq.items(), key=lambda x: (x[1], x[0]), reverse=True)
     return [val for val, cnt in groups for _ in range(cnt)]
  
+# Source: https://docs.python.org/3/library/functions.html (any, sorted and set functions)
+
+
 def calculate_score(hand):
     if is_straight_flush(hand):
         return 8
@@ -139,6 +139,7 @@ def score_label(score):
     return labels[score]
 
 # Source: https://briancaffey.github.io/2018/01/02/checking-poker-hands-with-python/
+# Also used CoPilot (Claude) to simplify the code above, as the code had an error for tiebreakers.
 
 # Print the cards in each hand and their scores to determine which hand is better
 
