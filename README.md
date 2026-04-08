@@ -14,22 +14,17 @@ The module explores the architecture, design, and development of web-based servi
 📦 web-services-and-applications/
 │
 ├── 📁 assignments/            # Graded assignments & submissions
-│   ├── assignment01/
-│   └── assignment02/
+│   ├── assignment02-carddraw.py
+│   ├── assignment03-cso.ipynb
+│   └── assignment04-github.ipynb
 │
-├── 📄 requirements.txt        # Python dependencies
+├── 📄 requirements.txt        # Dependencies
 └── 📄 README.md               # You are here!
 ```
 
 ---
 
 ## 🚀 Getting Started
-
-### Prerequisites
-
-- Python 3.10+
-- Git
-- Flask
 
 ### Clone the Repository
 
@@ -38,20 +33,18 @@ git clone https://github.com/marianemcgrath/wsaa.git
 cd wsaa
 ```
 
+### Pre-requisites
+
+- **Python 3**
+- **Requests** – for API calls
+- **JSON** – for data storage and manipulation
+- **Git & GitHub** – version control
+
 ### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
-
-### Run a Sample API (Flask Example)
-
-```bash
-cd labs/lab02-rest-api
-python app.py
-```
-
-Then visit: [http://localhost:5000](http://localhost:5000)
 
 ---
 
@@ -76,14 +69,15 @@ Then visit: [http://localhost:5000](http://localhost:5000)
 | 📍 Campus     | Galway-Mayo                                  |
 | 🎓 Programme  | Higher Diploma Computing in Data Analytics   |
 | 📖 Module     | Web Services & Applications                  |
-| 🗓️ Year       | 2025 / 2026                                  |
+| 🗓️ Year       | 2026                                         |
 
 ---
+👩‍💻 Author
 
-## 📬 Contact
+**Mariane McGrath**
+
+---
 
 > **Student Repository** — created for academic purposes as part of the Web Services and Applications programme at ATU Galway-Mayo.
-
----
 
 <div align="center">
