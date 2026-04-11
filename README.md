@@ -2,7 +2,7 @@
 
 ## 📌 Overview
 
-This repository contains the continuous assignments completed as part of the **Web Services & Applications** module within the **HDip in Computing in Data Analytics** programme at **ATU Galway-Mayo**.
+This repository contains the continuous assignments completed as part of the **Web Services & Applications** module within the **Higher Diploma in Computing in Data Analytics** programme at **ATU Galway-Mayo**.
 
 The module explores the architecture, design, and development of web-based services — from RESTful APIs to cloud-hosted applications — focusing on practical, data-driven use cases.
 
@@ -37,7 +37,6 @@ cd wsaa
 
 - **Python 3**
 - **Requests** – for API calls
-- **JSON** – for data storage and manipulation
 - **Git & GitHub** – version control
 
 ### Install Dependencies
@@ -75,7 +74,6 @@ pip install -r requirements.txt
 👩‍💻 Author
 
 **Mariane McGrath**
-
 ---
 
 > **Student Repository** — created for academic purposes as part of the Web Services and Applications programme at ATU Galway-Mayo.

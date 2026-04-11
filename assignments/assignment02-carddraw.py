@@ -139,7 +139,7 @@ def score_label(score):
     return labels[score]
 
 # Source: https://briancaffey.github.io/2018/01/02/checking-poker-hands-with-python/
-# Also used CoPilot (Claude) to simplify the code above, as the code had an error for tiebreakers.
+# Also, used CoPilot and Claude to simplify the code above, as the code had an error in case of a tiebreaker.
 
 # Print the cards in each hand and their scores to determine which hand is better
 
@@ -167,4 +167,13 @@ if score1 != score2:
     else:
         print("\nHand 2 wins!")
 else:
-    print("\nIt's a tie!")
+    # Same hand rank — compare card values using rank_values()
+    rv1 = rank_values(hand1)
+    rv2 = rank_values(hand2)
+    
+    if rv1 > rv2:
+        print("\nHand 1 wins the tiebreaker!")
+    elif rv2 > rv1:
+        print("\nHand 2 wins the tiebreaker!")
+    else:
+        print("\nIt's a true tie!")
