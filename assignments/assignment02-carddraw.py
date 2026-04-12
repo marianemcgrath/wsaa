@@ -34,6 +34,7 @@ hand2 = cards[5:]
 
 
 # The scoring system is:
+
 # - Straight Flush: 8 points
 # - Four of a Kind: 7 points
 # - Full House: 6 points
@@ -141,7 +142,8 @@ def score_label(score):
 # Source: https://briancaffey.github.io/2018/01/02/checking-poker-hands-with-python/
 # Also, used CoPilot and Claude to simplify the code above, as the code had an error in case of a tiebreaker.
 
-# Print the cards in each hand and their scores to determine which hand is better
+
+# BONUS: Printing the cards in each hand, and their scores to determine which hand is better
 
 # Print the cards in hand 1
 print("Hand 1:")
